@@ -87,6 +87,8 @@ if (windowWidth < windowHeight) {
  if (ellX < 10) {
     gameOver = 1;
     score = ('Your score: ' + score + '  Press any key');
+         canv.background(160);
+
   noLoop();
   }
 
