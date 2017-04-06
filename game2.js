@@ -5,7 +5,7 @@ function setup() {
 		if (windowWidth > windowHeight)
 	{
 			k = windowHeight/8;
-			cnv = createCanvas(k*6, k*8);
+			cnv = createCanvas(k*6, windowHeight);
 			cnv.position(0, 0);
 	} else
 	{
