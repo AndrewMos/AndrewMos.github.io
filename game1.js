@@ -26,7 +26,7 @@ if (windowWidth < windowHeight) {
       scale(k, k);
       wid = 500;
       hei = 600;
-      wid0 = 50;
+      wid0 = 0;
       hei0 = 0;
    }
      scale(k, k);
