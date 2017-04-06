@@ -88,7 +88,7 @@ if (windowWidth < windowHeight) {
   noLoop();
   }
 
-  textSize(35);
+  textSize(20);
   fill(0, 102, 153);
   text(score + "  " + k , wid0 + 15, hei0 + 50);
   noStroke();
