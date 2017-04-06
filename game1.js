@@ -22,11 +22,12 @@ if (windowWidth < windowHeight) {
    hei0 = 0;
    k = windowWidth / 500;
    } else {
+      k = (windowHeight / 500) * 0.7;
+      scale(k, k);
       wid = 500;
       hei = 600;
       wid0 = 50;
       hei0 = 0;
-      k = (windowHeight / 500) * 0.7;
    }
      scale(k, k);
      canv = createCanvas(wid * k, hei * k);
