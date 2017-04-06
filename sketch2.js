@@ -14,11 +14,11 @@ var   wid, hei, wid0, hei0, k;
 
   function setup() {
      createCanvas(windowWidth,windowHeight);
-     k = windowWidth / 400;
+     k = windowWidth / 600;
      scale(k, k);
 if (windowWidth < windowHeight) {
-   wid = 400;
-   hei = 400;
+   wid = 600;
+   hei = 600;
    wid0 = 0;
    hei0 = 0;
    } else {
