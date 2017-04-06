@@ -61,5 +61,5 @@ function draw() {
     particles[i].show();
   }
 
-  fr.html(floor(frameRate()));
+  
 }
