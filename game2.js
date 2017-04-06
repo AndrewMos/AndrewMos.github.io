@@ -1,18 +1,18 @@
 var k;
+var col = 6;
+row = 8;
 
 function setup() {
 	createCanvas(windowWidth,windowHeight);
-		if (windowWidth > windowHeight)
-	{
-			k = (windowHeight/8)*0.8;
-			cnv = createCanvas(k*6, k*8);
-			cnv.position(0, 0);
+		if (windowWidth > windowHeight) {
+			k = (windowHeight/row)*0.8;
+			cnv = createCanvas(k*col, k*row);
+			cnv.position(windowWidth/2-k*col/2, 0);
 		cnv.background(50);
-	} else
-	{
-			k = (windowWidth/6)*0.8;
-			cnv = createCanvas(k*6, k*8);
-			cnv.position(0, 0);
+	} else {
+			k = (windowWidth/col)*0.8;
+			cnv = createCanvas(k*col, k*row);
+			cnv.position(windowWidth/2-k*col/2, 0);
 		cnv.background(240);
 	}
 }
@@ -20,15 +20,30 @@ function setup() {
 function draw() {
 	stroke(200,200,200);
 	
-	   for(var i = 1; i < 6; i++)
-	{
-	    line(i*k, 0, i*k, k*8);
+	   for(var i = 1; i < col; i++) {
+	    line(i*k, 0, i*k, k*row);
 	}
-	   for(var i = 1; i < 8; i++)
-	{
-	    line(0, i*k, k*6, k*i);
+	   for(var i = 1; i < row; i++) {
+	    line(0, i*k, k*col, k*i);
 	}
-}
+} //draw
+
+function Brick() {
+  this.number = 3;
+  this.start = random(col - this.number + 1);
+  
+    this.function = show() 
+    {
+            for (var i = 1; i < this.number + 1; i++){
+                
+            }
+    }//show
+  
+  
+}//Brick
+
+
+
 
 
 function windowResized() {
@@ -36,13 +51,13 @@ function windowResized() {
 	{
 			k = (windowHeight/8)*0.8;
 			cnv = createCanvas(k*6, k*8);
-			cnv.position(0, 0);
-		cnv.background(50);
+			cnv.position(windowWidth/2-k*col/2, 0);
+		cnv.background(60);
 	} else
 	{
 			k = (windowWidth/6)*0.8;
 			cnv = createCanvas(k*6, k*8);
-			cnv.position(0, 0);
+			cnv.position(windowWidth/2-k*col/2, 0);
 		cnv.background(240);
 	}
 }
