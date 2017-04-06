@@ -17,13 +17,13 @@ var   wid, hei, wid0, hei0, k, button, canv;
      
 if (windowWidth < windowHeight) {
    wid = 500;
-   hei = 500;
+   hei = 600;
    wid0 = 0;
    hei0 = 0;
    k = windowWidth / 500;
    } else {
       wid = 500;
-      hei = 500;
+      hei = 600;
       wid0 = 0;
       hei0 = 0
       k = windowHeight / 500;
