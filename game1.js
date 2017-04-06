@@ -30,7 +30,7 @@ if (windowWidth < windowHeight) {
    }
      scale(k, k);
      canv = createCanvas(wid * k, hei * k);
-     
+     canv.position(wid0, hei0);
   ellX = random(wid0 + 100, wid - 100);
   ellY = random(hei0 + 100, hei - 100);
   ellSpeedY = random(speed);
