@@ -65,8 +65,8 @@ k = wid / 400;
     ellSpeedX = ellSpeedX / 1.2;
                                 //change plz
     if (gameOver == 1) {
-  ellX = random(100, wid - 100);
-  ellY = random(100, hei - 100);
+  ellX = random(wid0 + 100, wid - 100);
+  ellY = random(hei0 + 100, hei - 100);
   ellSpeedY = random(speed);
   ellSpeedX = 5;
   gameOver = 0;
@@ -77,40 +77,40 @@ k = wid / 400;
 
   function draw() {
      fill(230);
-  rect(wid0*k, hei0*k, (wid+5)*k, (hei+5)*k);
+  rect(wid0, hei0, (wid+5), (hei+5));
 
- if (ellX*k < 10*k) {
+ if (ellX < 10) {
     gameOver = 1;
     score = ('Your score: ' + score + '  Press any key');
   noLoop();
   }
 
-  textSize(35*k);
+  textSize(35);
   fill(0, 102, 153);
   text(score + "  " + k , wid0 + 15, hei0 + 50);
   noStroke();
-  rect((wid0 + 10)*k, rectY*k, 10*k, 50*k);
+  rect(wid0 + 10, rectY, 10, 50);
   rectY = rectY + rectSpeed;
   rectSpeed = rectSpeed + rectAcc;
      
      
-  if ((rectY + 50)*k > (hei - 10)*k) {
+  if ((rectY + 50) > (hei - 10)) {
   rectSpeed = 0;
-  rectY = (hei - 60)k;
+  rectY = (hei - 60);
   }
-  if ((rectY)*k < 10*k) {
+  if ((rectY) < 10) {
   rectSpeed = 0;
-  rectY = 10*k;
+  rectY = 10;
   }
 
-  ellipse(ellX*k, ellY*k, ellR*k, ellR*k);
+  ellipse(ellX, ellY, ellR, ellR);
   ellX = ellX + ellSpeedX;
   ellY = ellY + ellSpeedY;
-  if (((ellY + ellR/2)*k > hei)
-   || ((ellY - ellR/2)*k < hei0)) {
+  if (((ellY + ellR/2) > hei)
+   || ((ellY - ellR/2) < hei0)) {
     ellSpeedY = -ellSpeedY;
   }
-  if (((ellX - ellR/2)*k < 20*k) && (ellY*k > (rectY-5)*k) && (ellY*k < (rectY + 55)*k)) {
+  if (((ellX - ellR/2) < 20) && (ellY > (rectY-5)) && (ellY < (rectY + 55))) {
     ellX = 20 + ellR/2;
     ellSpeedX = -ellSpeedX;
     score ++;
@@ -119,7 +119,7 @@ k = wid / 400;
          ellSpeedY = ellSpeedY * 1.01;
   }
   }
-  if ((ellX + ellR/2)*k > wid)  {
+  if ((ellX + ellR/2) > wid)  {
     ellSpeedX = -ellSpeedX;
 
   }
