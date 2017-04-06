@@ -25,9 +25,9 @@ if (windowWidth < windowHeight) {
    wid0 = 0;
    hei0 = 0;
    } else {
-      wid = windowHeight;
-      hei = windowHeight;
-      wid0 = windowWidth/2 - windowHeight/2;
+      wid = 500;
+      hei = 500;
+      wid0 = windowWidth/2 - 250;
       hei0 = 0
    }
      
