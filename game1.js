@@ -30,7 +30,7 @@ if (windowWidth < windowHeight) {
       hei0 = 0
    }
      
-     canv = createCanvas(wid, hei);
+     canv = createCanvas(wid * k, hei * k);
      
   ellX = random(wid0 + 100, wid - 100);
   ellY = random(hei0 + 100, hei - 100);
