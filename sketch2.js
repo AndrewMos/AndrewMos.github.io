@@ -90,7 +90,7 @@ if (windowWidth < windowHeight) {
 
   textSize(20);
   fill(0, 102, 153);
-  text(score + "  " + k , wid0 + 15, hei0 + 50);
+  text(score + "  " + frameCount , wid0 + 15, hei0 + 50);
   noStroke();
   rect(wid0 + 10, rectY, 10, 50);
   rectY = rectY + rectSpeed;
