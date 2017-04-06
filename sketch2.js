@@ -9,13 +9,17 @@ var rectY = 100;
    gameOver = 0;
    speed = [-3, -4, -5, 3, 4, 5];
    score = 0;
-var   wid, hei, wid0, hei0, k;
+var   wid, hei, wid0, hei0, k, button;
 
 
   function setup() {
      createCanvas(windowWidth,windowHeight);
      k = windowWidth / 500;
      scale(k, k);
+     
+     button = createButton('press');
+     button.position(10, 520);
+     
 if (windowWidth < windowHeight) {
    wid = 500;
    hei = 500;
@@ -43,8 +47,6 @@ if (windowWidth < windowHeight) {
     rectSpeed = -7;
     rectAcc = -0.3;
     ellSpeedX = ellSpeedX * 1.2;
-
-
   }
 
   function mouseReleased() {
@@ -65,7 +67,7 @@ if (windowWidth < windowHeight) {
   function keyReleased() {
     rectAcc = 0.5;
     ellSpeedX = ellSpeedX / 1.2;
-                                //change plz
+                                
     if (gameOver == 1) {
   ellX = random(wid0 + 100, wid - 100);
   ellY = random(hei0 + 100, hei - 100);
@@ -78,7 +80,7 @@ if (windowWidth < windowHeight) {
   }
 
   function draw() {
-     scale(k, k);
+     
      fill(230);
   rect(wid0, hei0, (wid+5), (hei+5));
 
