@@ -25,7 +25,9 @@ if (windowWidth < windowHeight) {
       wid0 = windowWidth/2 - windowHeight/2;
       hei0 = 0
    }
+     
 k = wid / 400;
+     scale(k, k);
   ellX = random(wid0 + 100, wid - 100);
   ellY = random(hei0 + 100, hei - 100);
   ellSpeedY = random(speed);
@@ -76,6 +78,7 @@ k = wid / 400;
   }
 
   function draw() {
+     scale(k, k);
      fill(230);
   rect(wid0, hei0, (wid+5), (hei+5));
 
