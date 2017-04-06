@@ -1,3 +1,5 @@
+// ВСЕ ПРАВА ПРЕНАДЛЕЖАТ github.com/AndrewMos
+
 var rectY = 100;
    rectSpeed = 2;
    rectAcc = 0.5;
