@@ -18,6 +18,7 @@ function setup() {
 }
 
 function draw() {
-	text('test2', 20, 20);
+	fill(200,200,200);
+	text('test3', 20, 20);
 	
 }
