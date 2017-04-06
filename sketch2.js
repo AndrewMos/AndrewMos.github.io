@@ -17,8 +17,7 @@ var   wid, hei, wid0, hei0, k, button;
      k = windowWidth / 500;
      scale(k, k);
      
-     button = createButton('press');
-     button.position(10, 520);
+     
      
 if (windowWidth < windowHeight) {
    wid = 500;
