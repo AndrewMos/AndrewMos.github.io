@@ -125,8 +125,8 @@ if (windowWidth < windowHeight) {
     ellSpeedX = -ellSpeedX;
     score ++;
      if (score > 3) {
-        ellSpeedX = ellSpeedX * 1.05;
-         ellSpeedY = ellSpeedY * 1.05;
+        ellSpeedX = ellSpeedX * 1.02;
+         ellSpeedY = ellSpeedY * 1.03;
   }
   }
   if ((ellX + ellR/2) > wid)  {
