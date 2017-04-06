@@ -18,7 +18,16 @@ function setup() {
 }
 
 function draw() {
-	fill(200,200,200);
-	text('test3', 20, 20);
+	stroke(200,200,200);
+	
+	    for(var i = 1; i < 6; i++)
+	{
+	    line(i*k, 0, i*k, k*8);
+	}
+	   for(var i = 1; i < 8; i++)
+	{
+	    line(0, i*k, k*6, k*i);
+	}
+	
 	
 }
