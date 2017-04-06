@@ -42,18 +42,18 @@ if (windowWidth < windowHeight) {
   function mousePressed() {
     rectSpeed = -7;
     rectAcc = -0.3;
-    ellSpeedX = ellSpeedX * 1.2;
+    ellSpeedX = ellSpeedX ;
   }
 
   function keyPressed() {
     rectSpeed = -7;
     rectAcc = -0.3;
-    ellSpeedX = ellSpeedX * 1.2;
+    ellSpeedX = ellSpeedX ;
   }
 
   function mouseReleased() {
     rectAcc = 0.5;
-    ellSpeedX = ellSpeedX / 1.2;
+    ellSpeedX = ellSpeedX ;
 
      if (gameOver == 1) {
   ellX = random(wid0 + 100, wid - 100);
@@ -68,7 +68,7 @@ if (windowWidth < windowHeight) {
 
   function keyReleased() {
     rectAcc = 0.5;
-    ellSpeedX = ellSpeedX / 1.2;
+    ellSpeedX = ellSpeedX ;
                                 
     if (gameOver == 1) {
   ellX = random(wid0 + 100, wid - 100);
