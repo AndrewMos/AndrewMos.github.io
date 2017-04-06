@@ -9,15 +9,14 @@ var rectY = 100;
    gameOver = 0;
    speed = [-3, -4, -5, 3, 4, 5];
    score = 0;
-var   wid, hei, wid0, hei0, k, button;
+var   wid, hei, wid0, hei0, k, button, canv;
 
 
   function setup() {
      createCanvas(windowWidth,windowHeight);
      k = windowWidth / 500;
      scale(k, k);
-     
-     
+    
      
 if (windowWidth < windowHeight) {
    wid = 500;
@@ -30,6 +29,8 @@ if (windowWidth < windowHeight) {
       wid0 = 0;
       hei0 = 0
    }
+     
+     canv = createCanvas(wid, hei);
      
   ellX = random(wid0 + 100, wid - 100);
   ellY = random(hei0 + 100, hei - 100);
@@ -80,8 +81,9 @@ if (windowWidth < windowHeight) {
 
   function draw() {
      scale(k, k);
-     fill(230);
-  rect(wid0, hei0, (wid+5), (hei+5));
+     canv.background(230);
+ //    fill(230);
+ // rect(wid0, hei0, (wid+5), (hei+5));
 
  if (ellX < 10) {
     gameOver = 1;
