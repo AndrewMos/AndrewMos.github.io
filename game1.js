@@ -26,7 +26,7 @@ if (windowWidth < windowHeight) {
       hei = 600;
       wid0 = 0;
       hei0 = 0
-      k = (windowHeight / 500) * 0.9;
+      k = (windowHeight / 500) * 0.7;
    }
      scale(k, k);
      canv = createCanvas(wid * k, hei * k);
