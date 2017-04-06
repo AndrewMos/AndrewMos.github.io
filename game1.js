@@ -24,7 +24,7 @@ if (windowWidth < windowHeight) {
    } else {
       wid = 500;
       hei = 600;
-      wid0 = windowWidth/2;
+      wid0 = 50;
       hei0 = 0;
       k = (windowHeight / 500) * 0.7;
    }
