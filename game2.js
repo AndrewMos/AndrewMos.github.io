@@ -12,11 +12,3 @@ function draw() {
 	cnv.background(200);
 }
 
-
-function Block() {
-
-this.function = move() {
-
-}
-
-}
