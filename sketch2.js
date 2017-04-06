@@ -14,6 +14,8 @@ var   wid, hei, wid0, hei0, k;
 
   function setup() {
      createCanvas(windowWidth,windowHeight);
+     k = windowWidth / 400;
+     scale(k, k);
 if (windowWidth < windowHeight) {
    wid = 400;
    hei = 400;
@@ -26,8 +28,6 @@ if (windowWidth < windowHeight) {
       hei0 = 0
    }
      
-k = wid / 400;
-     scale(k, k);
   ellX = random(wid0 + 100, wid - 100);
   ellY = random(hei0 + 100, hei - 100);
   ellSpeedY = random(speed);
