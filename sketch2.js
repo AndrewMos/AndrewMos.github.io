@@ -80,7 +80,7 @@ if (windowWidth < windowHeight) {
   }
 
   function draw() {
-     
+     scale(k, k);
      fill(230);
   rect(wid0, hei0, (wid+5), (hei+5));
 
