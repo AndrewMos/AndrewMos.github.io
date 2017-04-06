@@ -10,7 +10,7 @@ function setup() {
 		cnv.background(50);
 	} else
 	{
-			k = windowWidth/6;
+			k = (windowWidth/6)*0.7;
 			cnv = createCanvas(k*6, k*8);
 			cnv.position(0, 0);
 		cnv.background(240);
