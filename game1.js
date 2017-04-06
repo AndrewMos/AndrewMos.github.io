@@ -43,7 +43,7 @@ if (windowWidth < windowHeight) {
     ellSpeedX = ellSpeedX * 1.2;
   }
 
-  function keyPressedNOT() {
+  function keyPressed() {
     rectSpeed = -7;
     rectAcc = -0.3;
     ellSpeedX = ellSpeedX * 1.2;
@@ -64,7 +64,7 @@ if (windowWidth < windowHeight) {
     }
   }
 
-  function keyReleasedNOT() {
+  function keyReleased() {
     rectAcc = 0.5;
     ellSpeedX = ellSpeedX / 1.2;
                                 
