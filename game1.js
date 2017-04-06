@@ -14,22 +14,21 @@ var   wid, hei, wid0, hei0, k, button, canv;
 
   function setup() {
      createCanvas(windowWidth,windowHeight);
-     k = windowWidth / 500;
-     scale(k, k);
-    
      
 if (windowWidth < windowHeight) {
    wid = 500;
    hei = 500;
    wid0 = 0;
    hei0 = 0;
+   k = windowWidth / 500;
    } else {
       wid = 500;
       hei = 500;
       wid0 = 0;
       hei0 = 0
+      k = windowHeight / 500;
    }
-     
+     scale(k, k);
      canv = createCanvas(wid * k, hei * k);
      
   ellX = random(wid0 + 100, wid - 100);
