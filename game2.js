@@ -18,5 +18,6 @@ function setup() {
 }
 
 function draw() {
+	text('test', 20, 20);
 	
 }
