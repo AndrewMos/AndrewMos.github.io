@@ -1,20 +1,11 @@
 var k;
 var col = 6;
 row = 8;
-
-var slider1, slider2;
+var brick;
 
 function setup() {
-  //createve
-  slider1 = createSlider(1, 30, 6, 1);
-  slider1.position(10, 10);
-  slider1.style('width', '100px');
-  slider2 = createSlider(1, 30, 8, 1);
-  slider2.position(10, 30);
-  slider2.style('width', '100px');
-  //end
   
-  
+  brick = new Brick();
   
 	createCanvas(windowWidth,windowHeight);
 		if (windowWidth > windowHeight) {
@@ -31,22 +22,6 @@ function setup() {
 }
 
 function draw() {
-  //creative
-    col = slider1.value();
-    row = slider2.value();
-    	createCanvas(windowWidth,windowHeight);
-		if (windowWidth > windowHeight) {
-			k = (windowHeight/row)*0.8;
-			cnv = createCanvas(k*col, k*row);
-			cnv.position(windowWidth/2-k*col/2, 0);
-		cnv.background(50);
-	} else {
-			k = (windowWidth/col)*0.8;
-			cnv = createCanvas(k*col, k*row);
-			cnv.position(windowWidth/2-k*col/2, 0);
-		cnv.background(240);
-	}
-  //end
   
   
 	stroke(200,200,200);
@@ -57,16 +32,20 @@ function draw() {
 	   for(var i = 1; i < row; i++) {
 	    line(0, i*k, k*col, k*i);
 	}
+	
+	brick.show();
 } //draw
 
 function Brick() {
+  this.level = 8;
   this.number = 3;
   this.start = random(col - this.number + 1);
   
     this.function = show() 
     {
             for (var i = 1; i < this.number + 1; i++){
-                
+		    stroke(20);
+                rect(k * (this.level - 1), k *(this.start - 1), k, k);
             }
     }//show
   
