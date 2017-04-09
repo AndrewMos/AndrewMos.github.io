@@ -106,7 +106,7 @@ if (windowWidth < windowHeight) {
      
   if ((rectY + 70) > (hei - 10)) {
   rectSpeed = 0;
-  rectY = (hei - 60);
+  rectY = (hei - 80);
   }
   if ((rectY) < 10) {
   rectSpeed = 0;
