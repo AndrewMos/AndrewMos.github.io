@@ -99,14 +99,14 @@ if (windowWidth < windowHeight) {
   fill(240, 50, 50);
   text(score , wid0 + 35, hei0 + 45);
   noStroke();
-  rect(wid0 + 10, rectY, 10, 50);
+  rect(wid0 + 10, rectY, 10, 70);
   rectY = rectY + rectSpeed;
   rectSpeed = rectSpeed + rectAcc;
      
      
-  if ((rectY + 50) > (hei - 10)) {
+  if ((rectY + 70) > (hei - 10)) {
   rectSpeed = 0;
-  rectY = (hei - 60);
+  rectY = (hei - 40);
   }
   if ((rectY) < 10) {
   rectSpeed = 0;
@@ -120,7 +120,7 @@ if (windowWidth < windowHeight) {
    || ((ellY - ellR/2) < hei0)) {
     ellSpeedY = -ellSpeedY;
   }
-  if (((ellX - ellR/2) < 20) && (ellY > (rectY-5)) && (ellY < (rectY + 55))) {
+  if (((ellX - ellR/2) < 20) && (ellY > (rectY-5)) && (ellY < (rectY + 75))) {
     ellX = 20 + ellR/2;
     ellSpeedX = -ellSpeedX;
     score ++;
