@@ -4,48 +4,40 @@ row = 8;
 var brick;
 
 function setup() {
-  
-  brick = new Brick();
+  frameRate(5);
+ 
   
 	createCanvas(windowWidth,windowHeight);
 		if (windowWidth > windowHeight) {
 			k = (windowHeight/row)*0.8;
 			cnv = createCanvas(k*col, k*row);
 			cnv.position(windowWidth/2-k*col/2, 0);
-		cnv.background(50);
 	} else {
 			k = (windowWidth/col)*0.8;
 			cnv = createCanvas(k*col, k*row);
 			cnv.position(windowWidth/2-k*col/2, 0);
-		cnv.background(240);
 	}
 }
 
 function draw() {
+  cnv.background(100);
+  translate(cnv.position);
+  lines();
   
-  
-	stroke(200,200,200);
-	
-	   for(var i = 1; i < col; i++) {
-	    line(i*k, 0, i*k, k*row);
-	}
-	   for(var i = 1; i < row; i++) {
-	    line(0, i*k, k*col, k*i);
-	}
-	
+   brick = new Brick();
 	brick.show();
 } //draw
 
 function Brick() {
   this.level = 8;
   this.number = 3;
-  this.start = random(col - this.number + 1);
+  this.start = ceil(random(col - this.number + 1));
   
-    this.function = show() 
+    this.show = function() 
     {
-            for (var i = 1; i < this.number + 1; i++){
+            for (var i = 0; i < this.number; i++){
 		    stroke(20);
-                rect(k * (this.level - 1), k *(this.start - 1), k, k);
+                rect(k * (this.start - 1 + i), k *(this.level - 1), k, k);
             }
     }//show
   
@@ -53,7 +45,16 @@ function Brick() {
 }//Brick
 
 
-
+function lines() {
+  	stroke(200,200,200);
+	
+	   for(var i = 1; i < col; i++) {
+	    line(i*k, 0, i*k, k*row);
+	}
+	   for(var i = 1; i < row; i++) {
+	    line(0, i*k, k*col, k*i);
+	}
+}
 
 
 function windowResized() {
@@ -71,5 +72,7 @@ function windowResized() {
 		cnv.background(240);
 	}
 }
+
+
 
 
