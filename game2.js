@@ -8,7 +8,7 @@ var minus = 0;
 
 function setup() {
   //frameRate(1);
-	createCanvas(windowWidth,windowHeight);
+	//createCanvas(windowWidth,windowHeight);
 		if (windowWidth > windowHeight) {
 			k = (windowHeight/row)*0.9;
 			cnv = createCanvas(k*col, k*row);
@@ -38,7 +38,6 @@ function mousePressed() {
           }
         }
       }
-  console.log( minus)
    bricks[bricks.length] = new Brick(bricks.length, minus, bricks[bricks.length - 1].number);
 }
 
@@ -92,7 +91,7 @@ function lines() {
 }
 
 
-function windowResized() {
+/*function windowResized() {
   	if (windowWidth > windowHeight)
 	{
 			k = (windowHeight/row)*0.9;
@@ -105,4 +104,4 @@ function windowResized() {
 			cnv.position(windowWidth/2-k*col/2, 0); 
 	}
 }
-
+*/
