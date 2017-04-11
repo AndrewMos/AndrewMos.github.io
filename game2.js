@@ -26,7 +26,7 @@ function keyPressed() {
   bricks[0] = new Brick(bricks.length, 0, ceil(col/2));
 }
 
-function mousePressed() {
+function mouseClicked() {
   if (bricks.length > 1 ) {
   minus = abs(bricks[bricks.length - 2].start - bricks[bricks.length - 1].start);
   if (minus > 0) {
@@ -39,6 +39,10 @@ function mousePressed() {
         }
       }
    bricks[bricks.length] = new Brick(bricks.length, minus, bricks[bricks.length - 1].number);
+}
+function mouseReleased() {
+noLoop();
+	loop;
 }
 
 function draw() {
