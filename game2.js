@@ -2,7 +2,7 @@ var k;
 var col = 15;
 row = 20;
 var bricks = [];
-var fps = 3;
+var fps = 2;
 var fpscount = 0;
 var minus = 0;
 
@@ -21,11 +21,24 @@ function setup() {
 	bricks[0] = new Brick(bricks.length, 0, ceil(col/2));
 }//setup
 
+function keyPressed() {
+  bricks = [];
+  bricks[0] = new Brick(bricks.length, 0, ceil(col/2));
+}
+
 function mousePressed() {
   if (bricks.length > 1 ) {
   minus = abs(bricks[bricks.length - 2].start - bricks[bricks.length - 1].start);
-  }
- 
+  if (minus > 0) {
+    if ((bricks[bricks.length - 2].start - bricks[bricks.length - 1].start) > 0 ) {
+          bricks[bricks.length - 1].number = bricks[bricks.length - 1].number - minus;
+          bricks[bricks.length - 1].start = bricks[bricks.length - 1].start + minus;
+        } else {
+            bricks[bricks.length - 1].number = bricks[bricks.length - 1].number - minus;
+          }
+        }
+      }
+  console.log( minus)
    bricks[bricks.length] = new Brick(bricks.length, minus, bricks[bricks.length - 1].number);
 }
 
@@ -44,7 +57,7 @@ for (var i = 0; i < bricks.length; i++) {
 
 function Brick(lvl, mini, num) {
   this.level = 20 - lvl;
-  this.number = num - mini;
+  this.number = num;
   this.start = ceil(random(1 ,col - this.number));
   this.speed = 1;
   
@@ -92,3 +105,4 @@ function windowResized() {
 			cnv.position(windowWidth/2-k*col/2, 0); 
 	}
 }
+
