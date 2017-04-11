@@ -10,29 +10,29 @@ function setup() {
   //frameRate(1);
 	createCanvas(windowWidth,windowHeight);
 		if (windowWidth > windowHeight) {
-			k = (windowHeight/row)*0.8;
+			k = (windowHeight/row)*0.9;
 			cnv = createCanvas(k*col, k*row);
 			cnv.position(windowWidth/2-k*col/2, 0);
 	} else {
-			k = (windowWidth/col)*0.8;
+			k = (windowWidth/col)*0.9;
 			cnv = createCanvas(k*col, k*row);
 			cnv.position(windowWidth/2-k*col/2, 0);
 	}
-	bricks[0] = new Brick(bricks.length, 0);
+	bricks[0] = new Brick(bricks.length, 0, ceil(col/2));
 }//setup
 
 function mousePressed() {
-  if (bricks.length > 1 && minus <= abs(bricks[bricks.length - 2].start - bricks[bricks.length - 1].start)) {
+  if (bricks.length > 1 ) {
   minus = abs(bricks[bricks.length - 2].start - bricks[bricks.length - 1].start);
   }
  
-   bricks[bricks.length] = new Brick(bricks.length, minus);
+   bricks[bricks.length] = new Brick(bricks.length, minus, bricks[bricks.length - 1].number);
 }
 
 function draw() {
   if(fpscount > fps) { 
     fpscount = 0;
-  cnv.background(100);
+  cnv.background(58, 158, 131);
   translate(cnv.position);
  // lines();
 bricks[bricks.length - 1].move();
@@ -42,9 +42,9 @@ for (var i = 0; i < bricks.length; i++) {
   } else { fpscount ++ }
 } //draw
 
-function Brick(lvl, mini) {
+function Brick(lvl, mini, num) {
   this.level = 20 - lvl;
-  this.number = 5 - mini;
+  this.number = num - mini;
   this.start = ceil(random(1 ,col - this.number));
   this.speed = 1;
   
@@ -52,7 +52,8 @@ function Brick(lvl, mini) {
     this.show = function() {
             for (var i = 0; i < this.number; i++){
 		    stroke(20);
-                rect(k * (this.start - 1 + i), k *(this.level - 1), k, k);
+		    noStroke();
+                rect(k * (this.start - 1 + i) + 2, k *(this.level - 1) + 2, k - 4, k - 4);
             }
     }//show
 
@@ -69,7 +70,6 @@ function Brick(lvl, mini) {
 
 function lines() {
   	stroke(200,200,200);
-
 	   for(var i = 1; i < col; i++) {
 	    line(i*k, 0, i*k, k*row);
 	}
@@ -82,12 +82,12 @@ function lines() {
 function windowResized() {
   	if (windowWidth > windowHeight)
 	{
-			k = (windowHeight/row)*0.8;
+			k = (windowHeight/row)*0.9;
 			cnv = createCanvas(k*col, k*row);
 			cnv.position(windowWidth/2-k*col/2, 0);
 	} else
 	{
-			k = (windowWidth/col)*0.8;
+			k = (windowWidth/col)*0.9;
 			cnv = createCanvas(k*col, k*row);
 			cnv.position(windowWidth/2-k*col/2, 0); 
 	}
