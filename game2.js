@@ -5,6 +5,7 @@ var bricks = [];
 var fps = 2;
 var fpscount = 0;
 var minus = 0;
+var mouse = 0;
 
 function setup() {
   //frameRate(1);
@@ -12,11 +13,11 @@ function setup() {
 		if (windowWidth > windowHeight) {
 			k = (windowHeight/row)*0.9;
 			cnv = createCanvas(k*col, k*row);
-			cnv.position(windowWidth/2-k*col/2, 0);
+			//cnv.position(windowWidth/2-k*col/2, 0);
 	} else {
 			k = (windowWidth/col)*0.9;
 			cnv = createCanvas(k*col, k*row);
-			cnv.position(windowWidth/2-k*col/2, 0);
+			//cnv.position(windowWidth/2-k*col/2, 0);
 	}
 	bricks[0] = new Brick(bricks.length, 0, ceil(col/2));
 }//setup
@@ -26,7 +27,10 @@ function keyPressed() {
   bricks[0] = new Brick(bricks.length, 0, ceil(col/2));
 }
 
-function mouseClicked() {
+
+function mousePressed() {
+if (mouse > 20) {
+mouse = 0;
   if (bricks.length > 1 ) {
   minus = abs(bricks[bricks.length - 2].start - bricks[bricks.length - 1].start);
   if (minus > 0) {
@@ -40,16 +44,15 @@ function mouseClicked() {
       }
    bricks[bricks.length] = new Brick(bricks.length, minus, bricks[bricks.length - 1].number);
 }
-function mouseReleased() {
-noLoop();
-	loop;
-}
+}//mouse
 
 function draw() {
-  if(fpscount > fps) { 
+mouse ++;
+
+  if(fpscount > fps) {
     fpscount = 0;
   cnv.background(58, 158, 131);
-  translate(cnv.position);
+//  translate(cnv.position);
  // lines();
 bricks[bricks.length - 1].move();
 for (var i = 0; i < bricks.length; i++) {
@@ -63,7 +66,7 @@ function Brick(lvl, mini, num) {
   this.number = num;
   this.start = ceil(random(1 ,col - this.number));
   this.speed = 1;
-  
+
 
     this.show = function() {
             for (var i = 0; i < this.number; i++){
@@ -95,7 +98,7 @@ function lines() {
 }
 
 
-/*function windowResized() {
+function windowResized() {
   	if (windowWidth > windowHeight)
 	{
 			k = (windowHeight/row)*0.9;
@@ -105,7 +108,6 @@ function lines() {
 	{
 			k = (windowWidth/col)*0.9;
 			cnv = createCanvas(k*col, k*row);
-			cnv.position(windowWidth/2-k*col/2, 0); 
+			cnv.position(windowWidth/2-k*col/2, 0);
 	}
 }
-*/
