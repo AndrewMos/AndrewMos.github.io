@@ -26,3 +26,11 @@ img {
     height: auto;
     margin-top: 10px;
 }
+
+.text {
+    color: #fff;
+    /* text-align: center; */
+    font-size: 20px;
+    margin: 20px auto;
+    width: 90%;
+}
